@@ -1,0 +1,5 @@
+CAV_PENETRATION = 0.3
+T = 3600
+I = 1000
+
+dim = 10
