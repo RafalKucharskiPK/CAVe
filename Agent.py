@@ -8,9 +8,9 @@ from config import *
 class Agent:
     # static definitions
     id = 0  # counter
-    o = 0 # origin € Zones
-    d = 0 # destination € Zones
-    dep = 0 # departure time
+    o = 0  # origin € Zones
+    d = 0  # destination € Zones
+    dep = 0  # departure time
     is_cav = False
     # route
     route = list()
