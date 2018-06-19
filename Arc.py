@@ -1,5 +1,9 @@
 import matplotlib.pyplot as plt
 
+from itertools import accumulate
+from Node import *
+from Agent import *
+import random
 
 class Arc:
     head = 0
@@ -45,3 +49,29 @@ class Arc:
 
     def plot(self):
         plt.plot([self.head.x, self.tail.x], [self.head.y, self.tail.y], color='grey')
+
+if __name__ == "__main__":
+
+    a_t = Node(1, 0, 0)
+    a_h = Node(2, 1, 1)
+    a = Arc(1,2)
+    inflows = [int(random.weibullvariate(1,1)*3) for i in range(500)]
+
+    inflows = list(accumulate(inflows))
+    print(inflows)
+
+    i = 1
+
+
+    for t in range(1000):
+        if t == inflows[0]:
+            print(inflows[0])
+            i+=1
+            #inflows.pop(0)
+            inflows = inflows[1:]
+            a.inflow(Agent(0,1), t)
+
+
+
+
+
